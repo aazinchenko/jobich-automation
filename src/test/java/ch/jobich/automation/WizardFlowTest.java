@@ -21,6 +21,7 @@ public class WizardFlowTest extends BaseUiTest {
           .selectRegion("All Switzerland")
           .next()
           .selectWorkMode("Remote")
+          .selectType("Full-time")
           .showJobs();
 
     Assert.assertTrue(results.matchingJobsCount() > 0);
