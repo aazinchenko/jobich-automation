@@ -37,4 +37,8 @@ public class PreferencesWizardPage extends BasePage {
     page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Show jobs")).click();
     return new WizardResultsPage(page);
   }
+  public PreferencesWizardPage selectType(String label){
+    page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(label)).click();
+    return this;
+  }
 }

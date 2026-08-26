@@ -1,4 +1,4 @@
-package ch.jobich.automation.;
+package ch.jobich.automation;
 
 import ch.jobich.automation.base.BaseUiTest;
 import ch.jobich.automation.config.ConfigReader;
