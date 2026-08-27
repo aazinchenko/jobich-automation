@@ -12,6 +12,7 @@ public class FirstBrowserTest extends BaseUiTest {
 
   @Test
   public void homePageTitleContainsJobich() {
+
     HomePage homePage = openHomePage();
 
     Assert.assertTrue(homePage.isOpened());
