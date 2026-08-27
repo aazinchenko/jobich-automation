@@ -10,9 +10,7 @@ public class FooterTest extends BaseUiTest {
 
   @Test
   public void homePageHasPrivacyPolicyLink() {
-    HomePage homePage = new HomePage(page);
-    homePage.open(ConfigReader.getInstance().config().getBaseUrl());
-
+    HomePage homePage = openHomePage();
     Assert.assertTrue(homePage.footer().privacyPolicyLink().isVisible());
   }
 }

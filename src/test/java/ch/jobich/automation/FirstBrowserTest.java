@@ -12,8 +12,7 @@ public class FirstBrowserTest extends BaseUiTest {
 
   @Test
   public void homePageTitleContainsJobich() {
-    HomePage homePage = new HomePage(page);
-    homePage.open(ConfigReader.getInstance().config().getBaseUrl());
+    HomePage homePage = openHomePage();
 
     Assert.assertTrue(homePage.isOpened());
   }

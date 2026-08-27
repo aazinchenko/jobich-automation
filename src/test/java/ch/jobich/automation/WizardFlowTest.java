@@ -11,8 +11,7 @@ public class WizardFlowTest extends BaseUiTest {
 
   @Test
   public void completingWizardShowsMatchingJobs() {
-    HomePage homePage = new HomePage(page);
-    homePage.open(ConfigReader.getInstance().config().getBaseUrl());
+    HomePage homePage = openHomePage();
 
     WizardResultsPage results = homePage
           .clickSetPreferences()
