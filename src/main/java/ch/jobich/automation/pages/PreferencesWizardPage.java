@@ -1,6 +1,10 @@
 package ch.jobich.automation.pages;
 
 import ch.jobich.automation.components.FooterComponent;
+import ch.jobich.automation.enums.Canton;
+import ch.jobich.automation.enums.Domain;
+import ch.jobich.automation.enums.LanguageRegion;
+import ch.jobich.automation.enums.LookingFor;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 
@@ -10,8 +14,8 @@ public class PreferencesWizardPage extends BasePage {
     super(page);
   }
 
-  public PreferencesWizardPage selectIndustry(String label) {
-    page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(label).setExact(true)).click();
+  public PreferencesWizardPage selectIndustry(Domain domain) {
+    page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(domain.label()).setExact(true)).click();
     return this;
   }
 
@@ -25,18 +29,18 @@ public class PreferencesWizardPage extends BasePage {
     return this;
   }
 
-  public PreferencesWizardPage selectRegion(String label) {
-    page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(label).setExact(true)).click();
+  public PreferencesWizardPage selectRegion(LanguageRegion languageRegion) {
+    page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(languageRegion.label()).setExact(true)).click();
     return this;
   }
 
-  public PreferencesWizardPage selectWorkMode(String label) {
-    page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(label).setExact(true)).click();
+  public PreferencesWizardPage selectWorkMode(LookingFor lookingFor) {
+    page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(lookingFor.label()).setExact(true)).click();
     return this;
   }
 
-  public PreferencesWizardPage selectType(String label){
-    page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(label)).click();
+  public PreferencesWizardPage selectType(LookingFor lookingFor){
+    page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(lookingFor.label())).click();
     return this;
   }
 

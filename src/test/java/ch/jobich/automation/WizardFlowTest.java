@@ -2,6 +2,9 @@ package ch.jobich.automation;
 
 import ch.jobich.automation.base.BaseUiTest;
 import ch.jobich.automation.config.ConfigReader;
+import ch.jobich.automation.enums.Domain;
+import ch.jobich.automation.enums.LanguageRegion;
+import ch.jobich.automation.enums.LookingFor;
 import ch.jobich.automation.pages.HomePage;
 import ch.jobich.automation.pages.WizardResultsPage;
 import org.testng.Assert;
@@ -15,12 +18,12 @@ public class WizardFlowTest extends BaseUiTest {
 
     WizardResultsPage results = homePage
           .clickSetPreferences()
-          .selectIndustry("IT & Software")
+          .selectIndustry(Domain.IT_SOFTWARE)
           .next()
-          .selectRegion("All Switzerland")
+          .selectRegion(LanguageRegion.DE)
           .next()
-          .selectWorkMode("Remote")
-          .selectType("Full-time")
+          .selectWorkMode(LookingFor.CONTRACT)
+          .selectType(LookingFor.REMOTE)
           .showJobs();
 
     Assert.assertTrue(results.matchingJobsCount() > 0);
