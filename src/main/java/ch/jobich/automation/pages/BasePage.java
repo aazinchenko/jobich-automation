@@ -19,4 +19,8 @@ public abstract class BasePage {
     return locator;
   }
 
+  public String currentUrl() {
+    return page.url();
+  }
+
 }
