@@ -30,6 +30,4 @@ public class WizardResultsPage extends BasePage {
   public FooterComponent footer() {
     return new FooterComponent(page);
   }
-
-
 }

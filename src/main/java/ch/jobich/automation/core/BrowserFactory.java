@@ -8,6 +8,46 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
 public final class BrowserFactory {
+  private static final ThreadLocal<Playwright> playwright = new ThreadLocal<>();
+  private static final ThreadLocal<Browser> browser = new ThreadLocal<>();
+
+  public static Page createPage() {
+    if (playwright.get() == null) {
+      playwright.set(Playwright.create());
+    }
+    if (browser.get() == null) {
+      browser.set(launchBrowser());
+    }
+    return browser.get().newPage();
+  }
+
+  public static void shutdown() {
+    if (browser.get() != null) {
+      browser.get().close();
+      browser.remove();
+    }
+    if (playwright.get() != null) {
+      playwright.get().close();
+      playwright.remove();
+    }
+  }
+
+  private static Browser launchBrowser() {
+    EnvironmentConfig config = ConfigReader.getInstance().config();
+    BrowserType.LaunchOptions options = new BrowserType.LaunchOptions()
+          .setHeadless(config.isHeadless());
+
+    return switch (config.getBrowser().toLowerCase()) {
+      case "firefox" -> playwright.get().firefox().launch(options);
+      case "webkit" -> playwright.get().webkit().launch(options);
+      default -> playwright.get().chromium().launch(options);
+    };
+  }
+}
+
+
+/*---------------------------------------OLD Implementation without Multithreading
+public final class BrowserFactory {
 
   private static Playwright playwright;
   private static Browser browser;
@@ -48,4 +88,4 @@ public final class BrowserFactory {
       default -> playwright.chromium().launch(options);
     };
   }
-}
+}*/
