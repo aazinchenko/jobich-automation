@@ -1,6 +1,7 @@
 package ch.jobich.automation.pages;
 
 import ch.jobich.automation.components.FooterComponent;
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 
@@ -10,8 +11,17 @@ public class HomePage extends BasePage {
     super(page);
   }
 
-  public void open(String url) {
+  public HomePage open(String url) {
     page.navigate(url);
+    acceptCookiesIfPresent();
+    return this;
+  }
+
+  private void acceptCookiesIfPresent() {
+    Locator acceptButton = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Accept"));
+    if (acceptButton.isVisible()) {
+      acceptButton.click();
+    }
   }
 
   public boolean isOpened() {

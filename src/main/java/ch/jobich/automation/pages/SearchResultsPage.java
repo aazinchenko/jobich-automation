@@ -1,8 +1,11 @@
 package ch.jobich.automation.pages;
 
 import ch.jobich.automation.components.FooterComponent;
+import ch.jobich.automation.enums.LookingFor;
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
+import ch.jobich.automation.data.SearchCriteria;
 
 public class SearchResultsPage extends BasePage {
 
@@ -17,5 +20,29 @@ public class SearchResultsPage extends BasePage {
   }
   public FooterComponent footer() {
     return new FooterComponent(page);
+  }
+
+  public SearchResultsPage search(SearchCriteria criteria) {
+
+    if (criteria.region() != null) {
+      String cssClass = "region-" + criteria.region().name().toLowerCase();
+      page.locator("button." + cssClass).click();
+    }
+
+    if (criteria.domain() != null) {
+      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(criteria.domain().label()).setExact(true)).click();
+    }
+
+    for (LookingFor filter : criteria.filters()) {
+      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(filter.label()).setExact(true)).click();
+    }
+
+    search(criteria.query());
+
+    return this;
+  }
+
+  public Locator showFiltersToggle() {
+    return page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Show filters"));
   }
 }
