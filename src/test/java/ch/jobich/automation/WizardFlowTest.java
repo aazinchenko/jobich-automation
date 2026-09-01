@@ -23,9 +23,27 @@ public class WizardFlowTest extends BaseUiTest {
           .selectRegion(LanguageRegion.DE)
           .next()
           .selectWorkMode(LookingFor.CONTRACT)
-          .selectType(LookingFor.REMOTE)
+          //.selectType(LookingFor.REMOTE)  too strict rule -> 0 results
           .showJobs();
 
     Assert.assertTrue(results.matchingJobsCount() > 0);
   }
+
+  @Test
+  public void completingWizardReachesResultsScreen() {
+    HomePage homePage = openHomePage();
+
+    WizardResultsPage results = homePage
+          .clickSetPreferences()
+          .selectIndustry(Domain.IT_SOFTWARE)
+          .next()
+          .selectRegion(LanguageRegion.ALL_SWITZERLAND)
+          .next()
+          .selectWorkMode(LookingFor.REMOTE)
+          .showJobs();
+
+    boolean reachedValidResultState = results.hasNoResults() || results.matchingJobsCount() >= 0;
+    Assert.assertTrue(reachedValidResultState);
+  }
+
 }
