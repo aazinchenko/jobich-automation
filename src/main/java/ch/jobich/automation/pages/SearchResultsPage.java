@@ -23,14 +23,10 @@ public class SearchResultsPage extends BasePage {
   }
 
   public SearchResultsPage search(SearchCriteria criteria) {
-    search(criteria.query());
-
-    if (criteria.region() != null || criteria.domain() != null || !criteria.filters().isEmpty()) {
-      showFiltersToggle().click();
-    }
 
     if (criteria.region() != null) {
-      page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(criteria.region().label()).setExact(true)).click();
+      String cssClass = "region-" + criteria.region().name().toLowerCase();
+      page.locator("button." + cssClass).click();
     }
 
     if (criteria.domain() != null) {
@@ -41,8 +37,11 @@ public class SearchResultsPage extends BasePage {
       page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(filter.label()).setExact(true)).click();
     }
 
+    search(criteria.query());
+
     return this;
   }
+
   public Locator showFiltersToggle() {
     return page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Show filters"));
   }
