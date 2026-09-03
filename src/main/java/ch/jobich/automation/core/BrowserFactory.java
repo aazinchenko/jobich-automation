@@ -3,6 +3,7 @@ package ch.jobich.automation.core;
 import ch.jobich.automation.config.ConfigReader;
 import ch.jobich.automation.config.EnvironmentConfig;
 import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
@@ -10,6 +11,7 @@ import com.microsoft.playwright.Playwright;
 public final class BrowserFactory {
   private static final ThreadLocal<Playwright> playwright = new ThreadLocal<>();
   private static final ThreadLocal<Browser> browser = new ThreadLocal<>();
+  private static final ThreadLocal<BrowserContext> context = new ThreadLocal<>();
 
   public static Page createPage() {
     if (playwright.get() == null) {
@@ -18,10 +20,22 @@ public final class BrowserFactory {
     if (browser.get() == null) {
       browser.set(launchBrowser());
     }
-    return browser.get().newPage();
+    BrowserContext newContext = browser.get().newContext();
+    context.set(newContext);
+    return newContext.newPage();
   }
 
+  /** Closes only the context/page - reused browser process stays warm for the next test/attempt. */
+  public static void closeContext() {
+    if (context.get() != null) {
+      context.get().close();
+      context.remove();
+    }
+  }
+
+  /** Full teardown - call once per thread, typically in an @AfterClass hook. */
   public static void shutdown() {
+    closeContext();
     if (browser.get() != null) {
       browser.get().close();
       browser.remove();
