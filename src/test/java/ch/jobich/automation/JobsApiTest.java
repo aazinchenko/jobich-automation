@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class JobsApiTest extends BaseApiTest {
 
-  @Test
+  @Test(groups = {"smoke","api"})
   public void searchByTeacherReturnsResults() {
     JobsSearchResponse response = jobsApi.search("teacher", 5);
 

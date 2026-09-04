@@ -11,4 +11,17 @@
         </classes>
     </test>
 
+    <test name="Full Regression">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <include name="regression"/>
+                <include name="api"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="ch.jobich.automation"/>
+        </packages>
+    </test>
+
 </suite>

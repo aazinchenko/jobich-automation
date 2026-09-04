@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 public class SearchWithCriteriaTest extends BaseUiTest {
 
-  @Test
+  @Test(groups = "regression")
   public void searchByCriteriaReturnsResults() {
     HomePage homePage = openHomePage();
 

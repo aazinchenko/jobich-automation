@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 public class WizardFlowTest extends BaseUiTest {
 
-  @Test
+  @Test(groups = "regression")
   public void completingWizardShowsMatchingJobs() {
     HomePage homePage = openHomePage();
 
@@ -29,7 +29,7 @@ public class WizardFlowTest extends BaseUiTest {
     Assert.assertTrue(results.matchingJobsCount() > 0);
   }
 
-  @Test
+  @Test(groups = "regression")
   public void completingWizardReachesResultsScreen() {
     HomePage homePage = openHomePage();
 
