@@ -3,6 +3,7 @@
 
     <listeners>
         <listener class-name="ch.jobich.automation.listeners.TestListener"/>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
     </listeners>
 
     <test name="Parallel Run Check">
@@ -11,7 +12,7 @@
         </classes>
     </test>
 
-    <test name="Full Regression">
+    <test name="All">
         <groups>
             <run>
                 <include name="smoke"/>
