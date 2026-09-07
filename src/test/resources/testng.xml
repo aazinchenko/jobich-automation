@@ -3,12 +3,24 @@
 
     <listeners>
         <listener class-name="ch.jobich.automation.listeners.TestListener"/>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
     </listeners>
 
     <test name="Parallel Run Check">
         <classes>
             <class name="ch.jobich.automation.FirstBrowserTest"/>
         </classes>
+    </test>
+
+    <test name="All">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="ch.jobich.automation"/>
+        </packages>
     </test>
 
 </suite>

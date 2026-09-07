@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 public class FirstBrowserTest extends BaseUiTest {
 
-  @Test(retryAnalyzer = RetryAnalyzer.class)
+  @Test(retryAnalyzer = RetryAnalyzer.class, groups = "smoke")
   public void homePageTitleContainsJobich() {
 
     HomePage homePage = openHomePage();

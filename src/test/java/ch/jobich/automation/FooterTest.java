@@ -16,32 +16,32 @@ public class FooterTest extends BaseUiTest {
     homePage = openHomePage();
   }
 
-  @Test
+  @Test(groups = "regression")
   public void homePageHasPrivacyPolicyLink() {
     Assert.assertTrue(homePage.footer().privacyPolicyLink().isVisible());
   }
 
-  @Test
+  @Test(groups = "regression")
   public void homePageHasTermsOfUseLink(){
     Assert.assertTrue(homePage.footer().termsOfUseLink().isVisible());
   }
 
-  @Test
+  @Test(groups = "regression")
   public void homePageHasLinkedInLink(){
     Assert.assertTrue(homePage.footer().LinkedInLink().isVisible());
   }
 
-  @Test
+  @Test(groups = "regression")
   public void homePageHasImprintLink(){
     Assert.assertTrue(homePage.footer().ImprintLink().isVisible());
   }
 
-  @Test
+  @Test(groups = "regression")
   public void homePageHasEmailLink(){
     Assert.assertTrue(homePage.footer().EmailLink().isVisible());
   }
 
-  @Test
+  @Test(groups = "regression")
   public void homePageHasFeedbackLink(){
     Assert.assertTrue(homePage.footer().FeedbackLink().isVisible());
   }
