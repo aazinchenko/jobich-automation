@@ -31,4 +31,4 @@ jobs:
 
       # Шаг 3: Запускаем сьют тестов
       - name: Execute TestNG Smoke Suite
-        run: mvn test -DsuiteXmlFile=src/test/resources/testng.xml
+        run: xvfb-run mvn test -DsuiteXmlFile=src/test/resources/testng.xml
