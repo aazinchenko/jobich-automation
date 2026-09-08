@@ -32,3 +32,28 @@ jobs:
       # Шаг 3: Запускаем сьют тестов
       - name: Execute TestNG Smoke Suite
         run: xvfb-run mvn test -DsuiteXmlFile=src/test/resources/testng.xml
+
+      # 4 - новая конфигурация для запуска аллюр
+      - name: Load test report history
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Generate Allure report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          allure_results: target/allure-results
+          allure_history: allure-history
+          keep_reports: 20
+
+      - name: Publish report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
