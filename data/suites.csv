@@ -1,3 +1,3 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","889","homePageTitleContainsJobich","Jobich QA Automation Suite","2026-09-09","passed","2026-09-09","ch.jobich.automation.FirstBrowserTest","All","ch.jobich.automation.FirstBrowserTest","homePageTitleContainsJobich"
-"","667","searchByTeacherReturnsResults","Jobich QA Automation Suite","2026-09-09","passed","2026-09-09","ch.jobich.automation.JobsApiTest","All","ch.jobich.automation.JobsApiTest","searchByTeacherReturnsResults"
+"","283","homePageTitleContainsJobich","Jobich QA Automation Suite","2026-09-09","passed","2026-09-09","ch.jobich.automation.FirstBrowserTest","All","ch.jobich.automation.FirstBrowserTest","homePageTitleContainsJobich"
+"","780","searchByTeacherReturnsResults","Jobich QA Automation Suite","2026-09-09","passed","2026-09-09","ch.jobich.automation.JobsApiTest","All","ch.jobich.automation.JobsApiTest","searchByTeacherReturnsResults"
