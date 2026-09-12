@@ -27,7 +27,9 @@ jobs:
         run: docker build -t jobich-tests .
 
       - name: Run tests in container
-        run: docker run --rm -v ${{ github.workspace }}/target:/app/target jobich-tests
+        run: |
+          docker run --rm -v ${{ github.workspace }}/target:/app/target jobich-tests
+          sudo chown -R $(id -u):$(id -g) target
 
       # 4
       - name: Load test report history
