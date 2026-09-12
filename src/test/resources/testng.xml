@@ -16,11 +16,18 @@
         <groups>
             <run>
                 <include name="smoke"/>
+                <include name="regression"/>
             </run>
         </groups>
         <packages>
             <package name="ch.jobich.automation"/>
         </packages>
+    </test>
+
+    <test name="Cucumber BDD">
+        <classes>
+            <class name="ch.jobich.automation.bdd.runners.CucumberTestNgRunner"/>
+        </classes>
     </test>
 
 </suite>

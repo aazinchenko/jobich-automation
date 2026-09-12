@@ -1,20 +1,20 @@
 name: Tests (PR)
 
-# 1. ТРИГГЕР: когда запускать?
+
 on:
   pull_request:
     branches: [ main ]
   schedule:
-    # Запуск в 0-ю минуту каждого часа (UTC)
+
     - cron: '15 9,18 * * *'
-  # Позволяет также нажимать кнопку "Run workflow" вручную из интерфейса
+
   workflow_dispatch:
 
-# 2. ЗАДАЧИ: что именно делать?
+# 2.
 jobs:
   smoke-tests:
     name: Run Test Suite
-    runs-on: ubuntu-latest # GitHub выделит чистую виртуальную машину на Linux
+    runs-on: ubuntu-latest
 
     steps:
       # Шаг 1: Скачиваем код из ветки PR на виртуальную машину
@@ -27,13 +27,13 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          cache: 'maven' # GitHub сохранит зависимости, чтобы не качать интернет заново при каждом запуске
+          cache: 'maven'
 
-      # Шаг 3: Запускаем сьют тестов
+      # Шаг 3:
       - name: Execute TestNG Smoke Suite
         run: xvfb-run mvn test -DsuiteXmlFile=src/test/resources/testng.xml
 
-      # 4 - новая конфигурация для запуска аллюр
+      # 4
       - name: Load test report history
         uses: actions/checkout@v4
         if: always()
