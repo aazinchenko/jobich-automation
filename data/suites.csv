@@ -1,24 +1,24 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","373","homePageTitleContainsJobich","Jobich QA Automation Suite","2026-09-15","passed","2026-09-15","ch.jobich.automation.FirstBrowserTest","All","ch.jobich.automation.FirstBrowserTest","homePageTitleContainsJobich"
+"","769","homePageTitleContainsJobich","Jobich QA Automation Suite","2026-09-15","passed","2026-09-15","ch.jobich.automation.FirstBrowserTest","All","ch.jobich.automation.FirstBrowserTest","homePageTitleContainsJobich"
+"","1963","completingWizardReachesResultsScreen","Jobich QA Automation Suite","2026-09-15","passed","2026-09-15","ch.jobich.automation.WizardFlowTest","All","ch.jobich.automation.WizardFlowTest","completingWizardReachesResultsScreen"
 "  As a visitor
   I want the footer links to be visible
-  So that I can reach legal info, contacts and social channels","463","Footer link is visible","","2026-09-15","passed","2026-09-15","","Footer links on the home page","Footer link is visible",""
+  So that I can reach legal info, contacts and social channels","475","Footer link is visible","","2026-09-15","passed","2026-09-15","","Footer links on the home page","Footer link is visible",""
+"","812","searchByCriteriaReturnsResults","Jobich QA Automation Suite","2026-09-15","passed","2026-09-15","ch.jobich.automation.SearchWithCriteriaTest","All","ch.jobich.automation.SearchWithCriteriaTest","searchByCriteriaReturnsResults"
 "  As a visitor
   I want the footer links to be visible
-  So that I can reach legal info, contacts and social channels","799","Footer link is visible","","2026-09-15","passed","2026-09-15","","Footer links on the home page","Footer link is visible",""
-"","960","completingWizardShowsMatchingJobs","Jobich QA Automation Suite","2026-09-15","passed","2026-09-15","ch.jobich.automation.WizardFlowTest","All","ch.jobich.automation.WizardFlowTest","completingWizardShowsMatchingJobs"
-"","1485","completingWizardReachesResultsScreen","Jobich QA Automation Suite","2026-09-15","passed","2026-09-15","ch.jobich.automation.WizardFlowTest","All","ch.jobich.automation.WizardFlowTest","completingWizardReachesResultsScreen"
+  So that I can reach legal info, contacts and social channels","523","Footer link is visible","","2026-09-15","passed","2026-09-15","","Footer links on the home page","Footer link is visible",""
+"  As a visitor
+  I want the footer links to be visible
+  So that I can reach legal info, contacts and social channels","31116","Footer link is visible","","2026-09-15","broken","2026-09-15","","Footer links on the home page","Footer link is visible",""
+"  As a visitor
+  I want the footer links to be visible
+  So that I can reach legal info, contacts and social channels","477","Footer link is visible","","2026-09-15","passed","2026-09-15","","Footer links on the home page","Footer link is visible",""
+"  As a visitor
+  I want the footer links to be visible
+  So that I can reach legal info, contacts and social channels","775","Footer link is visible","","2026-09-15","passed","2026-09-15","","Footer links on the home page","Footer link is visible",""
 "  As a visitor
   I want the footer links to be visible
   So that I can reach legal info, contacts and social channels","453","Footer link is visible","","2026-09-15","passed","2026-09-15","","Footer links on the home page","Footer link is visible",""
-"  As a visitor
-  I want the footer links to be visible
-  So that I can reach legal info, contacts and social channels","766","Footer link is visible","","2026-09-15","passed","2026-09-15","","Footer links on the home page","Footer link is visible",""
-"  As a visitor
-  I want the footer links to be visible
-  So that I can reach legal info, contacts and social channels","459","Footer link is visible","","2026-09-15","passed","2026-09-15","","Footer links on the home page","Footer link is visible",""
-"","1176","searchByCriteriaReturnsResults","Jobich QA Automation Suite","2026-09-15","passed","2026-09-15","ch.jobich.automation.SearchWithCriteriaTest","All","ch.jobich.automation.SearchWithCriteriaTest","searchByCriteriaReturnsResults"
-"","759","searchByTeacherReturnsResults","Jobich QA Automation Suite","2026-09-15","passed","2026-09-15","ch.jobich.automation.JobsApiTest","All","ch.jobich.automation.JobsApiTest","searchByTeacherReturnsResults"
-"  As a visitor
-  I want the footer links to be visible
-  So that I can reach legal info, contacts and social channels","1038","Footer link is visible","","2026-09-15","passed","2026-09-15","","Footer links on the home page","Footer link is visible",""
+"","760","searchByTeacherReturnsResults","Jobich QA Automation Suite","2026-09-15","passed","2026-09-15","ch.jobich.automation.JobsApiTest","All","ch.jobich.automation.JobsApiTest","searchByTeacherReturnsResults"
+"","928","completingWizardShowsMatchingJobs","Jobich QA Automation Suite","2026-09-15","passed","2026-09-15","ch.jobich.automation.WizardFlowTest","All","ch.jobich.automation.WizardFlowTest","completingWizardShowsMatchingJobs"
