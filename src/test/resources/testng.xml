@@ -13,6 +13,7 @@
     </test>
 
     <test name="All">
+        <groups>
             <run>
                 <include name="smoke"/>
                 <include name="regression"/>
