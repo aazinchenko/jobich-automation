@@ -6,7 +6,7 @@ public enum LookingFor {
   ONSITE("Onsite"),
   FULL_TIME("Full-time"),
   PART_TIME("Part-time"),
-  CONTRACT("Contract");
+  CONTRACT("Contract / Seasonal");
 
   private final String label;
 

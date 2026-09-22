@@ -18,7 +18,9 @@ public class FooterComponent {
   }
 
   public Locator privacyPolicyLink() {
-    return visible(page.locator("a[href='/privacy.html'][target='_blank']"));
+    return visible(page.locator("footer").getByRole(AriaRole.LINK,
+          new Locator.GetByRoleOptions().setName("Privacy Policy")));
+    //return visible(page.locator("a[href='/privacy.html'][target='_blank']"));
     //return visible(page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Privacy Policy")));
     //2 links for Privacy Policy found. We need the main to be tested.
   }
